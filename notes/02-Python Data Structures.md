@@ -7,8 +7,8 @@ A list is an **ordered, mutable collection** that allows duplicate elements.
 ```python
 nums = [10, 20, 30, 20]
 
-print(nums[0])    # 10
-print(nums[-1])   # 20
+print(nums[0])    # 10   Positive indices → left to right {0,...,l-1}
+print(nums[-1])   # 20   Negative indices → right to left  { -l,...,-1}
 print(nums[1:3])  # [20, 30]
 ```
 
