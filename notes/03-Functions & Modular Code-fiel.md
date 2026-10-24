@@ -224,6 +224,72 @@ Both filter elements; list comprehensions often offer better readability.
 - `filter(None, iterable)` removes falsy elements.
 
 
+# Python `map()` — Interview Notes
+
+## 1. Definition
+- `map()` applies a function to every element of an iterable.
+- Returns a **map object (iterator)**.
+
+**Syntax:**
+```python
+map(function, iterable)
+```
+
+## 2. Using a Function
+```python
+nums = [1, 2, 3, 4]
+
+def square(n):
+    return n ** 2
+
+result = list(map(square, nums))
+print(result)  # [1, 4, 9, 16]
+```
+
+## 3. Using Lambda
+```python
+nums = [1, 2, 3, 4]
+
+result = list(map(lambda x: x * 2, nums))
+print(result)  # [2, 4, 6, 8]
+```
+
+## 4. Convert Strings to Integers
+```python
+nums = ["10", "20", "30"]
+
+result = list(map(int, nums))
+print(result)  # [10, 20, 30]
+```
+
+## 5. Map Multiple Iterables
+`map()` passes corresponding elements from each iterable to the function. It stops when the shortest iterable is exhausted.
+
+```python
+a = [1, 2, 3]
+b = [10, 20, 30]
+
+result = list(map(lambda x, y: x + y, a, b))
+print(result)  # [11, 22, 33]
+```
+
+## 6. `map()` vs `filter()`
+
+| `map()` | `filter()` |
+|---|---|
+| Transforms elements | Selects elements |
+| Applies a function to each element | Keeps elements where the function returns truthy |
+| Usually preserves the number of elements for one iterable | May return fewer elements |
+
+## Key Interview Points
+- `map()` returns an iterator, not a list.
+- Use `list()` to materialize the results.
+- It supports multiple iterables.
+- The function's output becomes the corresponding output element.
+- List comprehension alternative: `[x * 2 for x in nums]`.
+
+
+
 ## 7. Modules and Imports
 
 A module is a Python file containing reusable code.
