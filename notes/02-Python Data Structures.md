@@ -83,6 +83,15 @@ print(a)  # [1, 2, 3]
 
 ---
 
+### LIST MERGE
+
+```python
+l1=[1,2,3,4,5]
+l2=[3,4,5,6,7,8]
+l3=set(l1+l2)   # order get lost , set is unordered
+l3 = list(dict.fromkeys(l1 + l2))  # [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
 ## 2. Tuples
 
 A tuple is an **ordered, immutable collection** that allows duplicates.
