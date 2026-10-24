@@ -158,6 +158,72 @@ print(students)
 
 Prefer `def` for functions with complex logic or multiple statements.
 
+## 0. filter 
+# Python `filter()` — Interview Notes
+
+## 1. Definition
+- `filter()` selects elements from an iterable that satisfy a condition.
+- Returns a **filter object (iterator)**.
+
+**Syntax:**
+```python
+filter(function, iterable)
+```
+
+## 2. Using a Function
+```python
+nums = [1, 2, 3, 4, 5, 6]
+
+def even(n):
+    return n % 2 == 0
+
+result = list(filter(even, nums))
+print(result)  # [2, 4, 6]
+```
+
+## 3. Using Lambda
+```python
+nums = [1, 2, 3, 4, 5, 6]
+
+result = list(filter(lambda x: x > 3, nums))
+print(result)  # [4, 5, 6]
+```
+
+## 4. Filter Strings
+```python
+words = ["hi", "python", "am", "code"]
+
+result = list(filter(lambda w: len(w) > 2, words))
+print(result)  # ['python', 'code']
+```
+
+## 5. Remove Falsy Values
+```python
+items = [0, 1, "", "hello", None, False]
+
+print(list(filter(None, items)))
+# [1, 'hello']
+```
+
+Falsy values include `0`, `False`, `None`, and empty strings.
+
+## 6. `filter()` vs List Comprehension
+
+```python
+list(filter(lambda x: x > 2, nums))
+[x for x in nums if x > 2]
+```
+
+Both filter elements; list comprehensions often offer better readability.
+
+## Key Interview Points
+- `filter()` takes a function and an iterable.
+- The function should return `True` to keep an element.
+- Use `list()` to convert the result into a list.
+- The filter object is an iterator and is consumed as you iterate over it.
+- `filter(None, iterable)` removes falsy elements.
+
+
 ## 7. Modules and Imports
 
 A module is a Python file containing reusable code.
